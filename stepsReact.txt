@@ -1,0 +1,129 @@
+1.  Comandos útiles
+
+    npm init (Creates package.json (manifest) file, list dependencies)
+
+    npm install <package name> --save (Install package locally (default) 
+                and add to package.json)
+
+    npm install <package name> --g (Install package globally (access anywhere)
+                SUDO)
+
+    npm install <package name> --save-dev (Use it only in development)
+
+2. (OPCIONAL, para practicar) Cuando iniciamos la app con 
+
+        npm init 
+
+    apareceran preguntas y las respondemos, finalmente saldra este archivo:
+    package.json
+
+        {
+        "name": "app",
+        "version": "1.0.0",
+        "description": "Second crash course of REACT",
+        "main": "index.js",
+        "scripts": {
+            "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        "repository": {
+            "type": "git",
+            "url": "git+https://github.com/dsvivass/REACT-FULL-COURSE.git"
+        },
+        "author": "",
+        "license": "ISC",
+        "bugs": {
+            "url": "https://github.com/dsvivass/REACT-FULL-COURSE/issues"
+        },
+        "homepage": "https://github.com/dsvivass/REACT-FULL-COURSE#readme"
+        }
+
+    el objeto scripts es el mas importante, ya que ahi estaran los scripts 
+    que vamos a usar 
+
+3. (OPCIONAL, para practicar) Vamos a instalar el primer paquete o dependencia
+
+        npm install bootstrap
+
+    y aparecerá inmediatamente en las dependecias
+
+        {
+            "name": "app",
+            "version": "1.0.0",
+            "description": "Second crash course of REACT",
+            "main": "index.js",
+            "scripts": {
+                "test": "echo \"Error: no test specified\" && exit 1"
+            },
+            "repository": {
+                "type": "git",
+                "url": "git+https://github.com/dsvivass/REACT-FULL-COURSE.git"
+            },
+            "author": "",
+            "license": "ISC",
+            "bugs": {
+                "url": "https://github.com/dsvivass/REACT-FULL-COURSE/issues"
+            },
+            "homepage": "https://github.com/dsvivass/REACT-FULL-COURSE#readme",
+            "dependencies": {
+                "bootstrap": "^5.1.1"
+            }
+        }
+
+
+    y tambien una carpeta donde se almacenaran las dependencias
+
+        node_modules
+    
+4. Para crear una react app corremos el siguiente comando 
+
+        npx create-react-app <app-name>
+
+    cambiamos a la carpeta e iniciamos para ver que todo funciona
+
+        npm start
+
+4.1 Si clonamos o se nos borran las dependencias, solo corremos 
+
+        npm install
+
+    y va a instalar todas las dependencias del package.json
+
+5. En la carpeta /public/ encontraremos 
+
+        index.html
+
+    donde haremos algunas cosas interesantes, 
+    por ejemplo importar GOOGLE FONTS
+    
+    
+    pero siempre trabajaremos en 
+
+    /src/
+
+6. Si usamos:
+
+        npm run build
+
+    Configura una versión de PRODUCCION minificada,
+    para que sea solo copiar y pegar en nuestro servicio
+    de hosting
+
+7. Para el ejemplo vamos a borrar de /src/
+
+        App.css
+        App.js
+        App.test.js
+        logo.svg
+        serviceWorker.js
+        setupTests.js
+
+    Solo dejamos en esa carpeta
+
+        index.js
+
+    PERO vamos a borrar todo el contenido de index.js
+
+
+
+
+
