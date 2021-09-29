@@ -123,7 +123,8 @@
 
     PERO vamos a borrar todo el contenido de index.js
 
+8. en index.js importamos react de la dependencia de react
 
-
+    import React from 'react'
 
 

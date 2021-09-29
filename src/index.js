@@ -1,13 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'; // el import es de ES6 JS no es funcionalidad de REACT
+import ReactDOM from 'react-dom'
+
+const Greeting = () => { // Los componentes los debo poner en mayuscula,
+                      // asi react sabe que es especial esta funcion
+  
+  // Esto que devuelvo es JSX y NO html
+  // We have to return a single element, if we try another div appended, it
+    // wont work. It must have a parent
+  return (
+    // En vez de div podemos usar react fragments, o usar semantica de html5
+    <React.Fragment> 
+      <div>
+        <h4>Hello world2!!</h4>    
+        <ul>
+          <li>
+            <a href="#">Hello people</a>
+          </li>
+        </ul>
+      </div>
+    </React.Fragment>
+    
+  )
+}
+
+
+// El equivalente, pero esto no gusta tanto, porque se vuelve tedioso
+// const Greeting = () => {
+//   return React.createElement(
+//     'div', 
+//     {}, 
+//     React.createElement('h4', {}, 'Hello world!!!')
+//   )
+// }
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
+  <Greeting/>,
+  document.getElementById('root') // Aqui es donde estara alojada nuestra app
+                                  // esta en /public/index.html
+)
