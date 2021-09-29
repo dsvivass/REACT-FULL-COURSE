@@ -23,6 +23,23 @@ const Greeting = () => { // Los componentes los debo poner en mayuscula,
   )
 }
 
+// Usando nested components
+
+const PersonGreeting = () => {
+
+  return (
+  <div>
+    <Person/>
+    <Message/>
+  </div>
+  )
+
+}
+
+const Person = () => <h1>Andres</h1>
+
+const Message = () => <p>Bienvenido!!!!</p>
+
 
 // El equivalente, pero esto no gusta tanto, porque se vuelve tedioso
 // const Greeting = () => {
@@ -35,7 +52,11 @@ const Greeting = () => { // Los componentes los debo poner en mayuscula,
 
 
 ReactDOM.render(
-  <Greeting/>,
+  <div>
+    <Greeting/>
+    <PersonGreeting/>
+  </div>
+  ,
   document.getElementById('root') // Aqui es donde estara alojada nuestra app
                                   // esta en /public/index.html
 )
