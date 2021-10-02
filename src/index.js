@@ -56,19 +56,38 @@ const BookList = () => { // Los componentes los debo poner en mayuscula,
 
 const Book = (props) => {
 
+  // Para manejar un evento en react necesitamos un argumento y un eventHandler
+
+  const clickHandler = (event) => {
+    console.log(event)
+    console.log(event.target)
+    alert('Clicked ' + props.id)
+  }
+
+  const clickHandlerWithArgs = (event, author) => {
+    console.log(event)
+    console.log(event.target)
+    alert('Autor: ' + author)
+    // Cuando escribamos datos a una base de datos es util pasar args
+  }
+
   // para no escribir props.<attr> puedo desencapsular mi objeto
-  console.log(props)
-  const {img, title, author} = props
+  // const {img, title, author} = props
 
   return (
 
-    <article className='book'>
+    <article className='book' onMouseOver={() => {
+      console.log(props.title)
+    }}>
+
       <h1>Title: {props.title}</h1>
       {props.children}
       <img src={props.img} alt="" />
       <h4>Author: {props.author.toUpperCase()}</h4>
       <p>{6 + 6}</p>
-      
+      <button type='button' onClick={clickHandler}>Click</button>
+      <button type='button' onClick={() => clickHandlerWithArgs(props.author)}>Click With Args</button>
+
     </article>
 
   )
